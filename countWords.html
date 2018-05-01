@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>统计输入的字数</title>
+</head>
+<body>
+	<label>
+		<legend>您还可以输入<span style="display: inline-block;" id="current_words"></span>个字符</legend>
+		<textarea rows="6" cols="30" id="content" maxlength="140"></textarea>
+	</label>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 获取允许输入的最大长度
+			var max_input_length = $("#content").attr('maxlength');
+			$("#current_words").text(max_input_length);
+			$("#content").keyup(function() {
+				// 获取用户输入的内容
+				var content = $(this).val();
+				console.log(max_input_length - content.length);
+				$("#current_words").text(max_input_length - content.length);
+			});
+		});
+	</script>
+</body>
+</html>
