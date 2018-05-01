@@ -1,0 +1,2 @@
+# theNumberOfWordsEntered
+jQuery实现的简单的统计用户输入的字数
